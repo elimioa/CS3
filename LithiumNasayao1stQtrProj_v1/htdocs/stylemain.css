@@ -1,0 +1,47 @@
+* {
+	box-sizing:border-box;
+}
+#body {
+}
+#line {
+	text-align: center;
+	border-bottom: solid;
+	padding: 10px;
+}
+#header {
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
+	font-size: 15px;
+	position: fixed;
+	float: right;
+	top: 30px;
+	padding: 15px 20px 15px 20px;
+	right: 20px;
+	z-index: 2;
+	background-color: white;
+}
+#logo {
+	text-align: center;
+
+}
+#catchphrase {
+	text-align: center;	
+}
+#links {
+	text-align: center;
+}
+.link2 {
+	margin: 30px 25px 25px 25px;
+}
+.link4 {
+	margin: 30px 25px 25px 25px;
+}
+.link6 {
+	margin: 30px 25px 25px 25px;
+}
+#catchphrase span {
+	font-size: 15px;
+}
+	
+
