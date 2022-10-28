@@ -1,0 +1,45 @@
+* {
+	box-sizing:border-box;
+	background-color:#ebdcc8;
+}
+#line {
+	background-color: #6b411e;
+	text-align: center;
+	border-bottom: solid;
+	border-bottom-color: #6b411e;
+	position: absolute;
+	width: 100%;
+	padding: 15px;
+	z-index: 2;
+}
+#header {
+	background-color: #ebdcc8;
+	border-style: solid;
+	border-color: #6b411e;
+	border-width: 3px;
+	font-size: 15px;
+	position: absolute;
+	float: right;
+	top: 30px;
+	padding: 10px 10px 10px 10px;
+	right: 20px;
+	z-index: 2;
+}
+
+.logo{
+	margin-top: 50px;
+	position: fixed;
+	float: left ; 
+	top: 5px;
+	z-index: 2;
+}
+.link2{
+	margin: 50px 550px 0px 550px; 
+}
+#content {
+	margin-right: 50px;
+	margin-left: 50px;
+	font-size: 25px;
+	font-family: "Arial";
+	color: #6b411e;
+}
