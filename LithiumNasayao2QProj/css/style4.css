@@ -8,6 +8,7 @@ body {
 	background-color:#ebdcc8;
 }
 nav{
+	position: fixed;
 	text-align: center; 
 	background-color: transparent;
 	padding: 5px; 
