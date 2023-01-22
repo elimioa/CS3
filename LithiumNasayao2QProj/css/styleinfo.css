@@ -1,0 +1,96 @@
+* {
+	box-sizing:border-box;
+	font-family: "Arial";
+}
+body {
+	background: url("../images/bg.png");
+	background-repeat:no-repeat;
+	background-color:#ebdcc8;
+}
+nav{
+	text-align: center; 
+	background-color: transparent;
+	position:fixed;
+	padding: 5px; 
+	top:0;
+	width:100%; 
+}
+.origin{
+	background-color: #ebdcc8;
+	border-radius: 15%;
+}	
+.types{
+	background-color: #ebdcc8;
+	border-radius: 15%;
+}	
+.recipe{
+	background-color: #ebdcc8;
+	border-radius: 15%;
+}	
+.reco{
+	background-color: #ebdcc8;
+	border-radius: 15%;
+}	
+.source{
+	background-color: #ebdcc8;
+	border-radius: 15%;
+}	
+#logo{
+	text-align:center; 
+	margin-top: 100px; 
+}
+#logo:hover{
+	transform:scale(1.3); 
+}
+a{
+	text-decoration:none; 
+	color:#6b411e; 
+	
+}
+#sm{
+	width:33.33%; 
+	float:left; 
+	text-align:center; 
+	margin-top:30px;
+}
+.fb{
+	border: 5px solid #6b411e;
+	margin: 10px 10px 10px 10px; 
+	text-align:center; 
+	padding:5px; 
+}
+.fb:hover{
+	background: url('../images/sprite.png') no-repeat 0 -110px;
+	width: 100px;
+	height: 100px;
+	border: 3px solid #6b411e;
+	font-size:0px; 
+}
+
+.ig{
+	border: 5px solid #6b411e;
+	margin: 10px 10px 10px 10px; 
+	text-align:center; 
+	padding:5px; 
+}
+.ig:hover{
+	background: url('../images/sprite.png') no-repeat -315px -110px;
+	width: 100px;
+	height: 100px;
+	border: 3px solid #6b411e;
+	font-size:0px; 
+}
+
+.twt{
+	border: 5px solid #6b411e;
+	margin: 10px 10px 10px 10px; 
+	text-align:center; 
+	padding:5px; 
+}
+.twt:hover{
+	background: url('../images/sprite.png') no-repeat -105px -110px;
+	width: 100px;
+	height: 100px;
+	border: 3px solid #6b411e;
+	font-size:0px; 
+}
