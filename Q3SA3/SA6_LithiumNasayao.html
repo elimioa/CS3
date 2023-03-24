@@ -29,7 +29,7 @@
 	var otpw;
 	//function to generate OTP (with min and max variables)
     function genOtp(){
-	var minOtp = 000000; 
+	var minOtp = 100000; 
 	var maxOtp = 999999; 
 	otpw = String(Math.floor(Math.random()*(maxOtp - minOtp + 1)) + minOtp);
 				document.getElementById('otp').innerHTML = otpw;
