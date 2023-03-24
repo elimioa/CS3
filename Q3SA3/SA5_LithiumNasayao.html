@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title> My Online Shop</title>
+    <!-- type in the necessary meta tags -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="EMCNasayao">
+		
+	<style>
+      span {color: blue; text-decoration:underline}
+      button {width: 100px; padding: 5px; background: pink;}
+	</style>
+	
+	</head>
+	
+<body>
+	<h1> Welcome to Mia's Shop For Accesories </h1>
+	<h2> Please select from the following items: </h2>
+	<!--- provide your own 3 items and their prices in the list --->
+	<ol>
+		<li> Ring's price: 100.00 </li>
+		<li> Bracelet's price: 250.00 </li>
+		<li> Necklace's price: 300.00 </li>
+	</ol>
+	<!-- the following will be used to display purchase information -->
+    <p> Item selected: <span id="item"> </span> </p>
+	<p> Qty bought: <span id="qty"> </span> </p>
+	<p> Amount to pay for the item: <span id="bill"> </span> </p>
+	<p> Current Total Bill: <span id="tbill"> </span> </p>
+	<button onclick="buyIt()"> Buy an Item </button>
+	<button onclick="clrIt()"> Clear </button>
+    
+    <script>
+        var iteM = "";
+        var pricE = 0;
+        var qtY = 0;
+        var bilL = 0;
+        
+        //function to buy items
+        function buyIt() {
+		
+			//prompt to ask item# and qty
+            var numIt = prompt("Enter item number:");
+            var qtyIt = prompt("Enter quantity:");
+            
+            //to check whether or not input was an integer
+            if (Number.isInteger(parseInt(qtyIt))) {
+                qtY = parseInt(qtyIt);
+				
+            //cases for different items and their prices
+			switch(numIt) {
+				case "1":
+					iteM = "Ring";
+					pricE= 100.00;
+					break;
+				case "2":
+					iteM = "Bracelet";
+					pricE = 250.00;
+					break;
+				case "3":
+					iteM = "Necklace";
+					pricE = 300.00;
+					break;
+				default:
+					alert("Item is not in the system. Kindly try again.");
+					return;
+			}
+			
+			//computation and display of total bill
+			var payBill = qtY * pricE;
+                document.getElementById("item").innerHTML = iteM;
+                document.getElementById("qty").innerHTML = qtY;
+                document.getElementById("bill").innerHTML = payBill.toFixed(2);
+                bilL += payBill;
+                document.getElementById("tbill").innerHTML = bilL.toFixed(2);
+				
+            } else {
+                alert("Input is not in our system.");
+            }
+        }
+        
+        //function to clear
+        function clrIt() {
+            iteM = "";
+            pricE = 0;
+            qtY = 0;
+            bilL = 0;
+            document.getElementById("item").innerHTML = "";
+            document.getElementById("qty").innerHTML = "";
+            document.getElementById("bill").innerHTML = "";
+            document.getElementById("tbill").innerHTML = "";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<title>One Time Password </title>
+		<!-- provide the necessary meta tags -->
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="author" content="EMCNasayao">
+		
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            a {font-size: 0.5em; color: maroon}
+        </style>
+
+	</head>
+	
+<body onload="genOtp()">
+
+	<h1> Final Verification Step </h1>
+	<h2> Current OTP: <span id="otp"> _ _ _ _ _ _ </span> <a href="" onclick="genOtp()"> New OTP </a></h2>
+    <button onclick="checkOtp()"> Enter the OTP as shown above </button>
+	
+    <script>
+	var otpw;
+	//function to generate OTP (with min and max variables)
+    function genOtp(){
+	var minOtp = 000000; 
+	var maxOtp = 999999; 
+	otpw = String(Math.floor(Math.random()*(maxOtp - minOtp + 1)) + minOtp);
+				document.getElementById('otp').innerHTML = otpw;
+	}
+    
+	//function to check OTP, move to new window if OTP is correct, and alert whether password was wrong
+	function checkOtp() {
+	let userOtp = prompt("Enter the OTP: "); 
+	if (userOtp === otpw){
+		window.open('https://elizamianasayao.github.io/CS3/LithiumNasayao2QProj/index.html');
+		}
+	else {
+	alert('You entered the wrong OTP. Kindly try again.'); 
+	genOtp(); 
+	}
+	}
+    </script>
+</body>
+</html>

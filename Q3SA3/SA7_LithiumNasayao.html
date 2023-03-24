@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<title>Numerology</title>
+		<!-- provide the necessary meta tags -->
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="author" content="EMCNasayao">
+		
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            span {font-size: 0.5em; color: maroon}
+        </style>
+
+	</head>
+	
+<body>
+
+	<h1> Your Fortune is in your name </h1>
+	<h2> Your Name is: <span id="thename"> </span></h2>
+    <h2> Today's fortune: <span id="fortune"> </span></h2>
+    
+    <button onclick="tellFortn()"> Click here to enter your name </button>
+    
+	<script>
+    	//function to tell fortune
+        function tellFortn() {
+        //prompt to get and display name of user
+        var name = prompt("Please enter your full name:");
+        document.getElementById("thename").innerHTML = name; 
+        //to get length of the characters typed in
+        var length = name.length;
+  
+        //loop to condense length into a single digit, and to convert value to string
+		while (length > 9) {
+			var sum = 0;
+			for (var i = 0; i < length.toString().length; i++) {
+				sum += parseInt(length.toString()[i]);
+			}
+			length = sum;
+		}
+            
+		//to display fortune according to the value calculated
+		switch (length) {
+			case 0:
+				document.getElementById("fortune").innerHTML = "Your wallet won't be able to handle the welth you will receive! ;]";
+				break;
+			case 1:
+				document.getElementById("fortune").innerHTML = "The person your thinking of likes you too! Don't be afraid to confess. <3";
+				break;
+			case 2:
+				document.getElementById("fortune").innerHTML = "You will receive good news this week! :]";
+				break;
+			case 3:
+				document.getElementById("fortune").innerHTML = "Your problems will soon be solved, just wait and do your best!";
+				break;
+			case 4:
+				document.getElementById("fortune").innerHTML = "Life will be kinder and more generous to you, hang in there!";
+				break;
+			case 5:
+				document.getElementById("fortune").innerHTML = "Your performance will peak this week!";
+				break;
+			case 6:
+				document.getElementById("fortune").innerHTML = "Someone misses your presence, reach out to them!";
+				break;
+			case 7:
+				document.getElementById("fortune").innerHTML = "Your days will be peaceful this week!";
+				break;
+			case 8:
+				document.getElementById("fortune").innerHTML = "The blessing you have given other will come back to you this month. Be good-hearted!";
+				break;
+			case 9:
+				document.getElementById("fortune").innerHTML = "You will soon win a lottery, it may be of wealth, luck, or love. :]";
+				break;
+		}
+	}
+    </script>  
+</body>
+</html>
