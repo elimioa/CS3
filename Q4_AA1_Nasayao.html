@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<title>Genetic Coding</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="EMCNasayao">
+		
+	</head>
+	
+	<body>
+	
+		<script>
+			let amiAcidArray = [];
+			let codonArray = [];
+			let mRNAseq = prompt("Kindly enter mRNA sequence: ");
+			let start = mRNAseq.indexOf("AUG");
+
+			if (start === -1) {
+				document.write("Kindly enter another proper mRNA sequence.");
+			}
+			else {
+				let readFrame = mRNAseq.slice(start);
+				let codon = "";
+				let j = 0;
+
+			while (j < readFrame.length - 3) {
+				codon = readFrame.slice(j, j + 3);
+				codonArray.push(codon);
+				j += 3;
+			}
+
+			for (let j = 0; j < codonArray.length; j++) {
+				let amiAcid = "";
+				switch (codonArray[j]) {
+					case "UUU":
+					case "UUC":
+						amiAcid = "Phe";
+						break;
+					case "UUA":
+					case "UUG":
+					case "CUU":
+					case "CUC":
+					case "CUA":
+					case "CUG":
+						amiAcid = "Leu";
+						break;
+					case "AUU":
+					case "AUC":
+					case "AUA":
+						amiAcid = "Ile";
+						break;
+					case "AUG":
+						amiAcid = "Met";
+						break;
+					case "GUU":
+					case "GUC":
+					case "GUA":
+					case "GUG":
+						amiAcid = "Val";
+						break;
+					case "UCU":
+					case "UCC":
+					case "UCA":
+					case "UCG":
+						amiAcid = "Ser";
+						break;
+					case "CCU":
+					case "CCC":
+					case "CCA":
+					case "CCG":
+						amiAcid = "Pro";
+						break;
+					case "ACU":
+					case "ACC":
+					case "ACA":
+					case "ACG":
+						amiAcid = "Thr";
+						break;
+					case "GCU":
+					case "GCC":
+					case "GCA":
+					case "GCG":
+						amiAcid = "Ala";
+						break;
+					case "UAU":
+					case "UAC":
+						amiAcid = "Tyr";
+						break;
+					case "CAU":
+					case "CAC":
+						amiAcid = "His";
+						break;
+					case "CAA":
+					case "CAG":
+						amiAcid = "Gln";
+						break;
+					case "AAU":
+					case "AAC":
+						amiAcid = "Asn";
+						break;
+					case "AAA":
+					case "AAG":
+						amiAcid = "Lys";
+						break;
+					case "GAU":
+					case "GAC":
+						amiAcid = "Asp";
+						break;
+					case "GAA":
+					case "GAG":
+						amiAcid = "Glu";
+						break;
+					case "UGU":
+					case "UGC":
+						amiAcid = "Cys";
+						break;
+					case "UGG":
+						amiAcid = "Trp";
+						break;
+					case "CGU":
+					case "CGC":
+					case "CGA":
+					case "CGG":
+					case "AGA":
+					case "AGG":
+						amiAcid = "Arg";
+						break;
+					case "AGU":
+					case "AGC":
+						amiAcid = "Ser";
+						break;
+					case "GGU":
+					case "GGC":
+					case "GGA":
+					case "GGG":
+						amiAcid = "Gly";
+						break;
+					case "UAA":
+					case "UAG":
+					case "UGA":
+						amiAcid = "STOP";
+						break;
+					default:
+						amiAcid = "Unknown";
+						break;
+				}
+
+				amiAcidArray.push(amiAcid);
+					if(amiAcid === "STOP"){
+					break;
+					}
+			}
+				document.write('[' + codonArray.map(codon => `"${codon}"`).join(', ') + ']<br>');
+				document.write('<br>' + amiAcidArray.map((acid, index) => `${codonArray[index]} --> ${acid}`).join('<br>') + '</p>');
+		  }
+		</script>
+		
+	</body>
+</html>
