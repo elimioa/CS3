@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Sign-up Sheet</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="EMCNasayao">
+	</head>
+	
+	<style> 
+		* {
+		box-sizing: border-box;
+		font-family: "Arial";
+		}
+		
+		body {
+		background: url("https://wallpaperaccess.com/full/1711593.gif"); 
+		background-size: cover;
+		}
+		
+		#title {
+		text-align: center;
+		color: #224c6d;
+		text-decoration: underline;
+		text-decoration-color: #224c6d;
+		}
+		
+		#form { 
+		color: #224c6d;
+		border-style: groove;
+		background-color: white;
+		border-radius: 30px; 
+		float:left; 
+		margin-left: 32.5%;
+		clear: both; 
+		padding: 25px; 
+		opacity: 0.95;
+		}
+		
+		fieldset {
+		color: #224c6d;
+		border-style: groove;
+		border-radius: 30px; 
+		float: left; 
+		margin-left: 35.5%;
+		background-color: white;
+		padding: 0px 30px 0px 30px;
+		opacity: 0.95;
+		}
+	</style> 
+	
+	<body> 
+		<h1 id="title"> Sign up to learn! </h1>
+		
+		<form id="form" onsubmit = "return disPlay ()"> 
+		
+		<label for="name"> Enter your name: </label> 
+		<input type="text" id="name" onblur="redBorder('name')" onfocus="greenBorder('name')"> 
+		<br>
+		<br> 
+		
+		<label for="username"> Enter your username: </label> 
+		<input type="text" id="username" onblur="redBorder('username')" onfocus="greenBorder('username')"> 
+		<br>
+		<br>
+		
+		<label for="gender"> Pick your gender: </label> 
+		<select id="gender" name="gender" onblur="redBorder('gender')" onfocus="greenBorder('gender')"> 
+			<option> Male </option> 
+			<option> Female </option> 
+			<option> Prefer not to mention </option> 
+		</select> 
+		<br>
+		<br> 
+		
+		<label for="Password"> Enter your password: </label> 
+		<input type="password" id="password" name="password" onblur="redBorder('password')" onfocus="greenBorder('password')">
+		<br>
+		<br> 
+		
+		<label for="email"> Enter your e-mail address: </label> 
+		<input type="email" id="email" onblur="redBorder('email')" onfocus="greenBorder('email')">
+		<br>
+		<br>
+		
+		<label for="address"> Address: </label> 
+		<input type="text" id="address" onblur="redBorder('address')" onfocus="greenBorder('address')">
+		<br>
+		<br> 
+		
+		<label for="shortText"> Type in a short paragraph of your interests: </label><br> 
+		<textarea id="para" rows="8" cols="55" onblur="redBorder('para')" onfocus="greenBorder('para')"></textarea> 
+		<br>
+		<br> 
+		
+		<input type="submit" value="Submit">
+		<input type="reset" value="Reset" onclick="reSet()">
+		<br>
+		<br>
+		</form>
+		
+		<p><div id="inputs" style="display: none">
+			<fieldset>
+			
+			<legend> These are the information you've inputed: </legend> 
+			Name: <span id = "nm"></span>
+			<br>
+			
+			Username: <span id = "unm"></span>
+			<br>
+			
+			Gender: <span id = "gndr"></span>
+			<br>
+			
+			Password: <span id = "pw"></span>
+			<br>
+			
+			Email: <span id = "eml"></span>
+			<br>
+			
+			Address: <span id = "add"></span>
+			<br>
+			
+			Short Description Of Interests: <br> <span id = "stext"></span>
+			<br>
+			
+		</fieldset>
+		</div></P>
+	</body> 
+	
+	<script> 
+		function disPlay () { 
+			document.getElementById('inputs').style.display = "block";
+			
+			var ipnm = document.getElementById("name").value; 
+				document.getElementById("nm").innerHTML = ipnm; 
+				
+			var ipunm = document.getElementById("username").value; 
+				document.getElementById("unm").innerHTML = ipunm; 
+				
+			var ipgndr = document.getElementById("gender").value; 
+				document.getElementById("gndr").innerHTML = ipgndr; 
+		
+			var ippw = document.getElementById("password").value; 
+				document.getElementById("pw").innerHTML = ippw; 
+			
+			var ipeml = document.getElementById("email").value; 
+				document.getElementById("eml").innerHTML = ipeml; 
+		
+			var ipadd = document.getElementById("address").value; 
+				document.getElementById("add").innerHTML = ipadd; 
+		
+			var ipstext = document.getElementById("para").value; 
+				document.getElementById("stext").innerHTML = ipstext; 
+				
+		return false; 
+	}
+
+	function redBorder(r){ 
+		var input = document.getElementById(r).value;
+			if (input === "") {
+			document.getElementById(r).style.borderColor = "red"; 
+		}
+	}
+	
+	function greenBorder(g) { 
+		var input = document.getElementById(g).value;
+		document.getElementById(g).style.borderColor = "green";
+	}
+
+	function reSet() { 
+		document.getElementById("name").style.borderColor = "";
+		document.getElementById("username").style.borderColor = "";
+		document.getElementById("gender").style.borderColor = "";
+		document.getElementById("password").style.borderColor = "";
+		document.getElementById("email").style.borderColor = "";
+		document.getElementById("address").style.borderColor = "";
+		document.getElementById("para").style.borderColor = "";
+		document.getElementById("nm").innerHTML = ""; 
+		document.getElementById("unm").innerHTML = ""; 
+		document.getElementById("gndr").innerHTML = ""; 
+		document.getElementById("pw").innerHTML = ""; 
+		document.getElementById("eml").innerHTML = ""; 
+		document.getElementById("add").innerHTML = ""; 
+		document.getElementById("stext").innerHTML = ""; 
+	}
+	</script> 
+</html>
